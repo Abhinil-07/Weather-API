@@ -21,6 +21,12 @@ function getResults(query) {
 
 function displayResults(weather) {
     console.log(weather);
+    if (weather.cod === "404"){
+        console.log("City not found")
+        alert("City not found");
+    }
+
+    console.log(weather.cod);
     let city = document.querySelector('.location .city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
